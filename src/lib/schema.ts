@@ -10,6 +10,33 @@ const domainSchema = z.enum([
   "billing-pricing-support",
 ]);
 
+const topicSchema = z.enum([
+  "cloud-fundamentals",
+  "global-infrastructure",
+  "well-architected",
+  "shared-responsibility",
+  "iam",
+  "security",
+  "governance-compliance",
+  "compute",
+  "serverless",
+  "containers",
+  "storage",
+  "database",
+  "networking",
+  "scaling-load-balancing",
+  "high-availability",
+  "migration",
+  "backup-dr",
+  "monitoring",
+  "deployment",
+  "ml-ai",
+  "pricing",
+  "cost-optimization",
+  "support-plans",
+  "troubleshooting",
+]);
+
 const optionSchema = z.object({
   id: optionIdSchema,
   text: z.string().min(1),
@@ -19,6 +46,7 @@ const questionSchema = z
   .object({
     id: z.string().min(1),
     domain: domainSchema,
+    topic: topicSchema.optional(),
     type: z.enum(["single", "multi"]),
     selectCount: z.number().int().min(2).max(5).optional(),
     prompt: z.string().min(1),
