@@ -1,13 +1,13 @@
 "use client";
 
-import { RotateCcw } from "lucide-react";
+import { Repeat, RotateCcw } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
 import { ResultsSummary } from "@/components/results-summary";
 import { ReviewPanel } from "@/components/review-panel";
 import { Button } from "@/components/ui/button";
 import { summarize } from "@/lib/scoring";
-import { clearSession, loadSession } from "@/lib/storage";
+import { clearSession, loadSession, saveSession } from "@/lib/storage";
 import type { SessionState } from "@/lib/types";
 
 export default function ResultsPage() {
@@ -50,23 +50,45 @@ export default function ResultsPage() {
   const submittedAt = Math.min(Date.now(), session.endsAt);
   const durationMs = submittedAt - session.startedAt;
 
-  function retake() {
+  function newPractice() {
     clearSession();
     router.push("/");
+  }
+
+  function practiceSame() {
+    if (!session) return;
+    const startedAt = Date.now();
+    const fresh: SessionState = {
+      startedAt,
+      endsAt: startedAt + session.settings.timeMinutes * 60_000,
+      questions: session.questions,
+      answers: {},
+      currentIndex: 0,
+      submitted: false,
+      settings: session.settings,
+    };
+    saveSession(fresh);
+    router.push("/practice");
   }
 
   return (
     <section className="mx-auto flex w-full max-w-3xl flex-col gap-8 px-4 pb-12 pt-4 sm:px-6">
       <ResultsSummary summary={summary} durationMs={durationMs} />
 
-      <div className="flex flex-col-reverse gap-3 sm:flex-row sm:items-center sm:justify-between">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <p className="font-sans text-sm text-[var(--muted)]">
           Review every question below. Filter to focus on what tripped you up.
         </p>
-        <Button type="button" variant="secondary" onClick={retake}>
-          <RotateCcw className="h-4 w-4" aria-hidden />
-          New practice
-        </Button>
+        <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:justify-end">
+          <Button type="button" variant="secondary" onClick={newPractice}>
+            <RotateCcw className="h-4 w-4" aria-hidden />
+            New practice
+          </Button>
+          <Button type="button" onClick={practiceSame}>
+            <Repeat className="h-4 w-4" aria-hidden />
+            Practice same questions
+          </Button>
+        </div>
       </div>
 
       <ReviewPanel
@@ -74,8 +96,12 @@ export default function ResultsPage() {
         answers={session.answers}
       />
 
-      <div className="flex justify-center pt-4">
-        <Button type="button" size="lg" onClick={retake}>
+      <div className="flex flex-col items-center gap-3 pt-4 sm:flex-row sm:justify-center">
+        <Button type="button" size="lg" onClick={practiceSame}>
+          <Repeat className="h-4 w-4" aria-hidden />
+          Practice these {session.questions.length} again
+        </Button>
+        <Button type="button" size="lg" variant="secondary" onClick={newPractice}>
           <RotateCcw className="h-4 w-4" aria-hidden />
           Start a new practice
         </Button>
