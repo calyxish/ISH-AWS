@@ -8,9 +8,11 @@ import { isCorrect } from "@/lib/scoring";
 import {
   DOMAIN_LABELS,
   DOMAINS,
+  TOPIC_LABELS,
   type Domain,
   type OptionId,
   type Question,
+  type Topic,
 } from "@/lib/types";
 
 interface ReviewPanelProps {
@@ -18,16 +20,25 @@ interface ReviewPanelProps {
   answers: Record<string, OptionId[]>;
 }
 
-type Filter = "all" | "incorrect" | Domain;
+type DomainFilter = "all" | "incorrect" | Domain;
 
-const FILTER_CHIPS: { value: Filter; label: string }[] = [
+const DOMAIN_CHIPS: { value: DomainFilter; label: string }[] = [
   { value: "all", label: "All" },
   { value: "incorrect", label: "Incorrect only" },
-  ...DOMAINS.map((d) => ({ value: d as Filter, label: DOMAIN_LABELS[d] })),
+  ...DOMAINS.map((d) => ({ value: d as DomainFilter, label: DOMAIN_LABELS[d] })),
 ];
 
 export function ReviewPanel({ questions, answers }: ReviewPanelProps) {
-  const [filter, setFilter] = useState<Filter>("all");
+  const [filter, setFilter] = useState<DomainFilter>("all");
+  const [topicFilter, setTopicFilter] = useState<Topic | "any">("any");
+
+  const presentTopics = useMemo<Topic[]>(() => {
+    const set = new Set<Topic>();
+    for (const q of questions) {
+      if (q.topic) set.add(q.topic);
+    }
+    return Array.from(set);
+  }, [questions]);
 
   const visible = useMemo(() => {
     return questions
@@ -38,11 +49,14 @@ export function ReviewPanel({ questions, answers }: ReviewPanelProps) {
         ok: isCorrect(q, answers[q.id] ?? []),
       }))
       .filter(({ q, ok }) => {
-        if (filter === "all") return true;
-        if (filter === "incorrect") return !ok;
-        return q.domain === filter;
+        if (filter === "incorrect" && ok) return false;
+        if (filter !== "all" && filter !== "incorrect" && q.domain !== filter) {
+          return false;
+        }
+        if (topicFilter !== "any" && q.topic !== topicFilter) return false;
+        return true;
       });
-  }, [questions, answers, filter]);
+  }, [questions, answers, filter, topicFilter]);
 
   return (
     <section className="flex flex-col gap-5">
@@ -51,7 +65,7 @@ export function ReviewPanel({ questions, answers }: ReviewPanelProps) {
           Review
         </h2>
         <div className="flex flex-wrap gap-2">
-          {FILTER_CHIPS.map((c) => (
+          {DOMAIN_CHIPS.map((c) => (
             <button
               key={c.value}
               type="button"
@@ -68,6 +82,39 @@ export function ReviewPanel({ questions, answers }: ReviewPanelProps) {
             </button>
           ))}
         </div>
+        {presentTopics.length > 0 ? (
+          <div className="flex flex-wrap gap-2">
+            <button
+              type="button"
+              onClick={() => setTopicFilter("any")}
+              className={cn(
+                "rounded-full border px-3 py-1 font-sans text-xs transition-colors",
+                topicFilter === "any"
+                  ? "border-[var(--accent)] bg-[var(--bubble)] text-[var(--fg)]"
+                  : "border-[var(--border)] bg-[var(--surface)] text-[var(--muted)] hover:bg-[var(--bubble)]",
+              )}
+              aria-pressed={topicFilter === "any"}
+            >
+              Any topic
+            </button>
+            {presentTopics.map((t) => (
+              <button
+                key={t}
+                type="button"
+                onClick={() => setTopicFilter(t)}
+                className={cn(
+                  "rounded-full border px-3 py-1 font-sans text-xs transition-colors",
+                  topicFilter === t
+                    ? "border-[var(--accent)] bg-[var(--bubble)] text-[var(--fg)]"
+                    : "border-[var(--border)] bg-[var(--surface)] text-[var(--muted)] hover:bg-[var(--bubble)]",
+                )}
+                aria-pressed={topicFilter === t}
+              >
+                {TOPIC_LABELS[t]}
+              </button>
+            ))}
+          </div>
+        ) : null}
       </div>
 
       {visible.length === 0 ? (
