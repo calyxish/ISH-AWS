@@ -27,7 +27,7 @@
       "correct": [
         "B"
       ],
-      "explanation": "A core advantage of cloud computing is trading up-front hardware spend (CapEx) for variable, on-demand spend (OpEx). Pay-as-you-go pricing is the mechanism that makes this possible — you only pay for what you use, when you use it.",
+      "explanation": "A core advantage of cloud computing is trading up-front hardware spend (CapEx) for variable, on-demand spend (OpEx). Pay-as-you-go pricing is the mechanism that makes this possible \u2014 you only pay for what you use, when you use it.",
       "reference": "https://aws.amazon.com/economics/"
     },
     {
@@ -56,7 +56,7 @@
       "correct": [
         "C"
       ],
-      "explanation": "Agility — the ability to rapidly provision, experiment, and deploy resources — is the AWS benefit that turns weeks-long provisioning into minutes-long provisioning.",
+      "explanation": "Agility \u2014 the ability to rapidly provision, experiment, and deploy resources \u2014 is the AWS benefit that turns weeks-long provisioning into minutes-long provisioning.",
       "reference": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/six-advantages-of-cloud-computing.html"
     },
     {
@@ -207,7 +207,7 @@
       "correct": [
         "B"
       ],
-      "explanation": "The Reliability pillar addresses the ability of a workload to perform its intended function correctly and consistently — including recovering from disruptions and dynamically acquiring resources to meet demand.",
+      "explanation": "The Reliability pillar addresses the ability of a workload to perform its intended function correctly and consistently \u2014 including recovering from disruptions and dynamically acquiring resources to meet demand.",
       "reference": "https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/welcome.html"
     },
     {
@@ -439,7 +439,7 @@
       "correct": [
         "A"
       ],
-      "explanation": "Multitenancy lets AWS aggregate demand from many customers across shared infrastructure, which produces economies of scale — passed back to customers as lower prices.",
+      "explanation": "Multitenancy lets AWS aggregate demand from many customers across shared infrastructure, which produces economies of scale \u2014 passed back to customers as lower prices.",
       "reference": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/six-advantages-of-cloud-computing.html"
     },
     {
@@ -497,7 +497,7 @@
       "correct": [
         "B"
       ],
-      "explanation": "For EC2 (IaaS), the customer is responsible for the guest OS — including patches, security configuration, and applications. AWS is responsible for the hypervisor, host hardware, and physical facilities.",
+      "explanation": "For EC2 (IaaS), the customer is responsible for the guest OS \u2014 including patches, security configuration, and applications. AWS is responsible for the hypervisor, host hardware, and physical facilities.",
       "reference": "https://aws.amazon.com/compliance/shared-responsibility-model/"
     },
     {
@@ -671,7 +671,7 @@
       "correct": [
         "C"
       ],
-      "explanation": "IAM roles deliver temporary credentials and are the recommended way to grant AWS services (such as an EC2 instance via an instance profile) the permissions they need — no long-lived keys on the instance.",
+      "explanation": "IAM roles deliver temporary credentials and are the recommended way to grant AWS services (such as an EC2 instance via an instance profile) the permissions they need \u2014 no long-lived keys on the instance.",
       "reference": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html"
     },
     {
@@ -1350,7 +1350,7 @@
       "correct": [
         "B"
       ],
-      "explanation": "AWS Direct Connect provides a dedicated, private network link between on-premises and AWS — higher bandwidth and lower jitter than an internet VPN. VPN traverses the public internet; VPC peering connects VPCs.",
+      "explanation": "AWS Direct Connect provides a dedicated, private network link between on-premises and AWS \u2014 higher bandwidth and lower jitter than an internet VPN. VPN traverses the public internet; VPC peering connects VPCs.",
       "reference": "https://aws.amazon.com/directconnect/"
     },
     {
@@ -1617,7 +1617,7 @@
         "B",
         "D"
       ],
-      "explanation": "AWS Fargate is the serverless compute engine for containers — used with both ECS and EKS — so the customer doesn't provision EC2 instances. The EC2 launch type and self-managed node groups require managing the underlying instances.",
+      "explanation": "AWS Fargate is the serverless compute engine for containers \u2014 used with both ECS and EKS \u2014 so the customer doesn't provision EC2 instances. The EC2 launch type and self-managed node groups require managing the underlying instances.",
       "reference": "https://aws.amazon.com/fargate/"
     },
     {
@@ -1855,7 +1855,7 @@
         "B",
         "D"
       ],
-      "explanation": "AWS IAM is an \"always free\" service — there is no charge for IAM itself. Lambda has an \"always free\" tier of 1M requests and 400,000 GB-seconds per month. The S3, EC2, and RDS allowances are 12-month introductory free tier, not always-free.",
+      "explanation": "AWS IAM is an \"always free\" service \u2014 there is no charge for IAM itself. Lambda has an \"always free\" tier of 1M requests and 400,000 GB-seconds per month. The S3, EC2, and RDS allowances are 12-month introductory free tier, not always-free.",
       "reference": "https://aws.amazon.com/free/"
     },
     {
@@ -1978,7 +1978,7 @@
       "correct": [
         "B"
       ],
-      "explanation": "The Performance Efficiency pillar's design principles include \"democratize advanced technologies\" and \"go global in minutes\" — exactly the goal of adopting serverless to use new capabilities quickly."
+      "explanation": "The Performance Efficiency pillar's design principles include \"democratize advanced technologies\" and \"go global in minutes\" \u2014 exactly the goal of adopting serverless to use new capabilities quickly."
     },
     {
       "id": "ccp-pdf-0003",
@@ -2007,7 +2007,7 @@
       "correct": [
         "D"
       ],
-      "explanation": "Amazon CloudFront is the AWS CDN — it caches video content at edge locations worldwide so global users get low-latency playback. Auto Scaling adjusts compute, ELB distributes regional traffic, Kinesis Video Streams ingests live video."
+      "explanation": "Amazon CloudFront is the AWS CDN \u2014 it caches video content at edge locations worldwide so global users get low-latency playback. Auto Scaling adjusts compute, ELB distributes regional traffic, Kinesis Video Streams ingests live video."
     },
     {
       "id": "ccp-pdf-0004",
@@ -2065,7 +2065,7 @@
       "correct": [
         "B"
       ],
-      "explanation": "Reliability is the pillar that addresses recovering from disruptions and dynamically acquiring resources to meet demand — both stated outcomes in the prompt."
+      "explanation": "Reliability is the pillar that addresses recovering from disruptions and dynamically acquiring resources to meet demand \u2014 both stated outcomes in the prompt."
     },
     {
       "id": "ccp-pdf-0006",
@@ -2216,7 +2216,7 @@
       "correct": [
         "D"
       ],
-      "explanation": "Elasticity — acquiring resources when you need them and releasing them when you don't — is a foundational cloud design principle. Provisioning for peak or always picking the largest instance is the opposite of cloud-native design."
+      "explanation": "Elasticity \u2014 acquiring resources when you need them and releasing them when you don't \u2014 is a foundational cloud design principle. Provisioning for peak or always picking the largest instance is the opposite of cloud-native design."
     },
     {
       "id": "ccp-pdf-0011",
@@ -2251,7 +2251,7 @@
         "B",
         "C"
       ],
-      "explanation": "EC2 AMIs let you re-launch identical instances in another AZ or Region; EBS snapshots back up volumes and can be copied across Regions. RIs are pricing, Shield is DDoS protection, GuardDuty is threat detection — none are DR mechanisms."
+      "explanation": "EC2 AMIs let you re-launch identical instances in another AZ or Region; EBS snapshots back up volumes and can be copied across Regions. RIs are pricing, Shield is DDoS protection, GuardDuty is threat detection \u2014 none are DR mechanisms."
     },
     {
       "id": "ccp-pdf-0012",
@@ -2367,7 +2367,7 @@
       "correct": [
         "C"
       ],
-      "explanation": "Spreading workloads across Availability Zones is the canonical implementation of the \"Design for failure\" principle — assume any one AZ can fail and the workload still serves users."
+      "explanation": "Spreading workloads across Availability Zones is the canonical implementation of the \"Design for failure\" principle \u2014 assume any one AZ can fail and the workload still serves users."
     },
     {
       "id": "ccp-pdf-0016",
@@ -2396,7 +2396,7 @@
       "correct": [
         "B"
       ],
-      "explanation": "Physical security of AWS data centers — access control, environmental safeguards, hardware decommissioning — is AWS's responsibility under the shared model. IAM lifecycle, EBS encryption choice, and security group rules are the customer's."
+      "explanation": "Physical security of AWS data centers \u2014 access control, environmental safeguards, hardware decommissioning \u2014 is AWS's responsibility under the shared model. IAM lifecycle, EBS encryption choice, and security group rules are the customer's."
     },
     {
       "id": "ccp-pdf-0017",
@@ -2483,7 +2483,7 @@
       "correct": [
         "B"
       ],
-      "explanation": "IAM credentials belong to the customer — rotating access keys regularly is the customer's responsibility under the shared model. AWS does not automatically rotate user keys."
+      "explanation": "IAM credentials belong to the customer \u2014 rotating access keys regularly is the customer's responsibility under the shared model. AWS does not automatically rotate user keys."
     },
     {
       "id": "ccp-pdf-0020",
@@ -2605,7 +2605,7 @@
       "correct": [
         "B"
       ],
-      "explanation": "Savings Plans commit to a dollar-per-hour spend over 1 or 3 years for steep discounts vs. On-Demand — ideal for a workload that must run continuously for 12 months. Spot can be reclaimed (bad for must-always-be-available), Dedicated Hosts are pricier, On-Demand has no commitment but is full list price."
+      "explanation": "Savings Plans commit to a dollar-per-hour spend over 1 or 3 years for steep discounts vs. On-Demand \u2014 ideal for a workload that must run continuously for 12 months. Spot can be reclaimed (bad for must-always-be-available), Dedicated Hosts are pricier, On-Demand has no commitment but is full list price."
     },
     {
       "id": "ccp-pdf-0024",
@@ -2634,7 +2634,7 @@
       "correct": [
         "B"
       ],
-      "explanation": "\"Perform operations as code\" is a stated design principle of the Operational Excellence pillar — using scripts and infrastructure-as-code to apply the same DevOps practices to operations that you use for application code."
+      "explanation": "\"Perform operations as code\" is a stated design principle of the Operational Excellence pillar \u2014 using scripts and infrastructure-as-code to apply the same DevOps practices to operations that you use for application code."
     },
     {
       "id": "ccp-pdf-0025",
@@ -2808,7 +2808,7 @@
       "correct": [
         "B"
       ],
-      "explanation": "AWS CloudTrail records every API call, including the IAM principal, source IP, and timestamp — exactly what you need to identify who terminated an instance. CloudWatch is for metrics/logs; X-Ray traces app requests; IAM defines permissions but doesn't log usage."
+      "explanation": "AWS CloudTrail records every API call, including the IAM principal, source IP, and timestamp \u2014 exactly what you need to identify who terminated an instance. CloudWatch is for metrics/logs; X-Ray traces app requests; IAM defines permissions but doesn't log usage."
     },
     {
       "id": "ccp-pdf-0031",
@@ -2866,7 +2866,7 @@
       "correct": [
         "C"
       ],
-      "explanation": "Firewall (security group) configuration is the customer's responsibility — an example of security IN the cloud. Edge locations, physical security, and global infrastructure are AWS's responsibility."
+      "explanation": "Firewall (security group) configuration is the customer's responsibility \u2014 an example of security IN the cloud. Edge locations, physical security, and global infrastructure are AWS's responsibility."
     },
     {
       "id": "ccp-pdf-0033",
@@ -2982,7 +2982,7 @@
       "correct": [
         "A"
       ],
-      "explanation": "AWS Config records configuration changes over time and evaluates resources against rules — the right tool for audit of change management. Trusted Advisor offers best-practice checks; CloudWatch is metrics/logs; Inspector scans for vulnerabilities."
+      "explanation": "AWS Config records configuration changes over time and evaluates resources against rules \u2014 the right tool for audit of change management. Trusted Advisor offers best-practice checks; CloudWatch is metrics/logs; Inspector scans for vulnerabilities."
     },
     {
       "id": "ccp-pdf-0037",
@@ -3011,7 +3011,7 @@
       "correct": [
         "B"
       ],
-      "explanation": "Multi-Region deployments primarily raise availability — surviving the loss of an entire Region. Durability speaks to data integrity, security is broader, coupling is about software design."
+      "explanation": "Multi-Region deployments primarily raise availability \u2014 surviving the loss of an entire Region. Durability speaks to data integrity, security is broader, coupling is about software design."
     },
     {
       "id": "ccp-pdf-0038",
@@ -3069,7 +3069,7 @@
       "correct": [
         "D"
       ],
-      "explanation": "A VPC is regional — its subnets can live in any Availability Zone within a single Region, but a VPC itself cannot span multiple Regions."
+      "explanation": "A VPC is regional \u2014 its subnets can live in any Availability Zone within a single Region, but a VPC itself cannot span multiple Regions."
     },
     {
       "id": "ccp-pdf-0040",
@@ -3162,7 +3162,7 @@
       "correct": [
         "B"
       ],
-      "explanation": "Loose coupling — components that interact via well-defined interfaces and degrade independently — is a foundational cloud design best practice (and an AWS Well-Architected principle)."
+      "explanation": "Loose coupling \u2014 components that interact via well-defined interfaces and degrade independently \u2014 is a foundational cloud design best practice (and an AWS Well-Architected principle)."
     },
     {
       "id": "ccp-pdf-0043",
@@ -3220,7 +3220,7 @@
       "correct": [
         "A"
       ],
-      "explanation": "Spanning multiple AZs is the canonical pattern for high availability — the workload survives the loss of any single AZ."
+      "explanation": "Spanning multiple AZs is the canonical pattern for high availability \u2014 the workload survives the loss of any single AZ."
     },
     {
       "id": "ccp-pdf-0045",
@@ -3278,7 +3278,7 @@
       "correct": [
         "A"
       ],
-      "explanation": "With RDS the customer manages database connections (security groups, IAM authentication, app-side connection pools). AWS installs and patches the engine, replaces failed instances, and provides KMS encryption — the customer just opts in."
+      "explanation": "With RDS the customer manages database connections (security groups, IAM authentication, app-side connection pools). AWS installs and patches the engine, replaces failed instances, and provides KMS encryption \u2014 the customer just opts in."
     },
     {
       "id": "ccp-pdf-0047",
@@ -3342,7 +3342,7 @@
         "A",
         "D"
       ],
-      "explanation": "Decommissioning physical drives and controlling physical access to data centers are both AWS-only duties. Security groups/NACLs and EC2 OS patching are customer duties. RDS OS patching is AWS — though that option is not asked here as a customer duty."
+      "explanation": "Decommissioning physical drives and controlling physical access to data centers are both AWS-only duties. Security groups/NACLs and EC2 OS patching are customer duties. RDS OS patching is AWS \u2014 though that option is not asked here as a customer duty."
     },
     {
       "id": "ccp-pdf-0049",
@@ -3491,13 +3491,13 @@
         },
         {
           "id": "E",
-          "text": "Firewall management"
+          "text": "Amazon EC2 Auto Scaling"
         }
       ],
       "correct": [
-        "A"
+        "E"
       ],
-      "explanation": "REVIEW: the source PDF appears to mismatch this prompt with options about shared-responsibility categories. Of the options offered, Virtualization Management is the only AWS-responsibility item present — but none directly answers \"makes EC2 more elastic.\" Treat with care during review."
+      "explanation": "Amazon EC2 Auto Scaling automatically launches and terminates instances to match demand, which is exactly what makes the fleet elastic. The other options (virtualization, hardware, encryption, and facilities management) are categories in the AWS shared responsibility model \u2014 they describe what AWS manages on your behalf, but they do not provide elasticity."
     },
     {
       "id": "ccp-pdf-0054",
@@ -3591,7 +3591,7 @@
         "C",
         "D"
       ],
-      "explanation": "When modeling AWS workload TCO, the major direct AWS cost categories are Compute, Storage, and Data Transfer. Facilities, network infrastructure, and hardware lifecycle are on-premises costs you compare AWS against — not AWS-side cost components."
+      "explanation": "When modeling AWS workload TCO, the major direct AWS cost categories are Compute, Storage, and Data Transfer. Facilities, network infrastructure, and hardware lifecycle are on-premises costs you compare AWS against \u2014 not AWS-side cost components."
     },
     {
       "id": "ccp-pdf-0057",
@@ -3655,7 +3655,7 @@
       "correct": [
         "C"
       ],
-      "explanation": "IAM roles give EC2 temporary credentials via the instance profile — never hard-code keys or read them from a file. Public bucket policies expose the bucket to the world."
+      "explanation": "IAM roles give EC2 temporary credentials via the instance profile \u2014 never hard-code keys or read them from a file. Public bucket policies expose the bucket to the world."
     },
     {
       "id": "ccp-pdf-0059",
@@ -3691,7 +3691,7 @@
       "domain": "cloud-concepts",
       "topic": "cloud-fundamentals",
       "type": "single",
-      "prompt": "A company's on-premises application deployment cycle was 3–4 weeks. After migrating to the AWS Cloud, the company can deploy the application in 2–3 days. Which benefit has this company experienced by moving to the AWS Cloud?",
+      "prompt": "A company's on-premises application deployment cycle was 3\u20134 weeks. After migrating to the AWS Cloud, the company can deploy the application in 2\u20133 days. Which benefit has this company experienced by moving to the AWS Cloud?",
       "options": [
         {
           "id": "A",
@@ -3713,7 +3713,7 @@
       "correct": [
         "C"
       ],
-      "explanation": "Going from a 3–4 week deploy cycle to 2–3 days is the textbook example of agility — the ability to deploy faster as a benefit of AWS."
+      "explanation": "Going from a 3\u20134 week deploy cycle to 2\u20133 days is the textbook example of agility \u2014 the ability to deploy faster as a benefit of AWS."
     },
     {
       "id": "ccp-pdf-0061",
@@ -4232,7 +4232,7 @@
       "domain": "security-compliance",
       "topic": "shared-responsibility",
       "type": "single",
-      "prompt": "According to the AWS shared responsibility model, which of the following is the customer’s obligation?",
+      "prompt": "According to the AWS shared responsibility model, which of the following is the customer\u2019s obligation?",
       "options": [
         {
           "id": "A",
@@ -4261,7 +4261,7 @@
       "domain": "security-compliance",
       "topic": "shared-responsibility",
       "type": "single",
-      "prompt": "Which of the following is the customer’s obligation under the shared responsibility model?",
+      "prompt": "Which of the following is the customer\u2019s obligation under the shared responsibility model?",
       "options": [
         {
           "id": "A",
@@ -4290,7 +4290,7 @@
       "domain": "cloud-concepts",
       "topic": "cloud-fundamentals",
       "type": "single",
-      "prompt": "What is the AWS Cloud’s value proposition?",
+      "prompt": "What is the AWS Cloud\u2019s value proposition?",
       "options": [
         {
           "id": "A",
@@ -4312,7 +4312,7 @@
       "correct": [
         "B"
       ],
-      "explanation": "AWS Cloud's value proposition includes no long-term contracts — pay-as-you-go. Security is shared (not solely AWS \"in\" the cloud); new servers in minutes (not days); customers manage their own applications."
+      "explanation": "AWS Cloud's value proposition includes no long-term contracts \u2014 pay-as-you-go. Security is shared (not solely AWS \"in\" the cloud); new servers in minutes (not days); customers manage their own applications."
     },
     {
       "id": "ccp-pdf-0080",
@@ -4634,7 +4634,7 @@
       "topic": "shared-responsibility",
       "type": "multi",
       "selectCount": 2,
-      "prompt": "Which of the following tasks is the AWS customer’s duty under the shared responsibility model? (Select two.)",
+      "prompt": "Which of the following tasks is the AWS customer\u2019s duty under the shared responsibility model? (Select two.)",
       "options": [
         {
           "id": "A",
@@ -4762,7 +4762,7 @@
       "topic": "shared-responsibility",
       "type": "multi",
       "selectCount": 2,
-      "prompt": "Which of the following actions is the customer’s responsibility under the AWS shared responsibility model? (Select two.)",
+      "prompt": "Which of the following actions is the customer\u2019s responsibility under the AWS shared responsibility model? (Select two.)",
       "options": [
         {
           "id": "A",
@@ -4818,7 +4818,7 @@
       "correct": [
         "D"
       ],
-      "explanation": "Loose coupling — components communicating via well-defined contracts so one failure doesn't cascade — is the cloud design principle that isolates failures between dependent components."
+      "explanation": "Loose coupling \u2014 components communicating via well-defined contracts so one failure doesn't cascade \u2014 is the cloud design principle that isolates failures between dependent components."
     },
     {
       "id": "ccp-pdf-0096",
@@ -4998,7 +4998,7 @@
         },
         {
           "id": "D",
-          "text": "The company’s AWS account will be frozen and can be restarted after a payment plan is established."
+          "text": "The company\u2019s AWS account will be frozen and can be restarted after a payment plan is established."
         }
       ],
       "correct": [
@@ -5161,7 +5161,7 @@
       "correct": [
         "C"
       ],
-      "explanation": "Handling sudden 10× spikes is the textbook definition of scalability — the ability to grow capacity to match demand."
+      "explanation": "Handling sudden 10\u00d7 spikes is the textbook definition of scalability \u2014 the ability to grow capacity to match demand."
     },
     {
       "id": "ccp-pdf-0107",
@@ -5198,7 +5198,7 @@
       "topic": "shared-responsibility",
       "type": "multi",
       "selectCount": 2,
-      "prompt": "Which of the following tasks is the customer’s duty under the shared responsibility model? (Select two.)",
+      "prompt": "Which of the following tasks is the customer\u2019s duty under the shared responsibility model? (Select two.)",
       "options": [
         {
           "id": "A",
@@ -5539,7 +5539,7 @@
         "A",
         "B"
       ],
-      "explanation": "Enterprise Support has a 15-minute critical response target; Enterprise On-Ramp has 30 minutes — both meet \"within 30 minutes.\" Business Support's critical target is 1 hour, which does not. Both Enterprise tiers also include consultative migration guidance."
+      "explanation": "Enterprise Support has a 15-minute critical response target; Enterprise On-Ramp has 30 minutes \u2014 both meet \"within 30 minutes.\" Business Support's critical target is 1 hour, which does not. Both Enterprise tiers also include consultative migration guidance."
     },
     {
       "id": "ccp-pdf-0119",
@@ -5806,7 +5806,7 @@
       "correct": [
         "A"
       ],
-      "explanation": "Launching the additional instances in multiple AZs within a single Region increases availability — survives any single-AZ outage. Same-AZ defeats the purpose; cross-Region adds latency and complexity for a simple HA pattern."
+      "explanation": "Launching the additional instances in multiple AZs within a single Region increases availability \u2014 survives any single-AZ outage. Same-AZ defeats the purpose; cross-Region adds latency and complexity for a simple HA pattern."
     },
     {
       "id": "ccp-pdf-0128",
@@ -5963,7 +5963,7 @@
       "correct": [
         "B"
       ],
-      "explanation": "To withstand an environmental disruption (data center / power / cooling event), replicate across Availability Zones — each AZ is a discrete data center campus. Edge locations are caches, Regions are bigger units, Route 53 is DNS."
+      "explanation": "To withstand an environmental disruption (data center / power / cooling event), replicate across Availability Zones \u2014 each AZ is a discrete data center campus. Edge locations are caches, Regions are bigger units, Route 53 is DNS."
     },
     {
       "id": "ccp-pdf-0133",
@@ -6056,7 +6056,7 @@
       "correct": [
         "B"
       ],
-      "explanation": "AWS CloudFormation provisions AWS resources from declarative templates — the canonical IaC service. Systems Manager is operations, CodeCommit is Git hosting, Config tracks configuration."
+      "explanation": "AWS CloudFormation provisions AWS resources from declarative templates \u2014 the canonical IaC service. Systems Manager is operations, CodeCommit is Git hosting, Config tracks configuration."
     },
     {
       "id": "ccp-pdf-0136",
@@ -6207,7 +6207,7 @@
       "correct": [
         "A"
       ],
-      "explanation": "On-Demand Instances handle short, no-interruption spikes without commitment — flexible and pay-as-you-go. Spot can be reclaimed; Reserved Instances/Dedicated Hosts require commitment."
+      "explanation": "On-Demand Instances handle short, no-interruption spikes without commitment \u2014 flexible and pay-as-you-go. Spot can be reclaimed; Reserved Instances/Dedicated Hosts require commitment."
     },
     {
       "id": "ccp-pdf-0141",
@@ -6300,7 +6300,7 @@
       "correct": [
         "B"
       ],
-      "explanation": "Deploying RDS across multiple AZs is a Reliability-pillar pattern — it provides automatic failover to a standby in another AZ when the primary fails."
+      "explanation": "Deploying RDS across multiple AZs is a Reliability-pillar pattern \u2014 it provides automatic failover to a standby in another AZ when the primary fails."
     },
     {
       "id": "ccp-pdf-0144",
@@ -6544,7 +6544,7 @@
       "correct": [
         "C"
       ],
-      "explanation": "Infrastructure recovery from a disaster aligns with the Reliability pillar — recovering from disruptions is one of its stated outcomes."
+      "explanation": "Infrastructure recovery from a disaster aligns with the Reliability pillar \u2014 recovering from disruptions is one of its stated outcomes."
     },
     {
       "id": "ccp-pdf-0152",
@@ -6666,7 +6666,7 @@
       "correct": [
         "C"
       ],
-      "explanation": "Amazon GuardDuty is an agentless, ML-driven threat detection service that monitors CloudTrail, VPC Flow Logs, and DNS logs — no software deployment required."
+      "explanation": "Amazon GuardDuty is an agentless, ML-driven threat detection service that monitors CloudTrail, VPC Flow Logs, and DNS logs \u2014 no software deployment required."
     },
     {
       "id": "ccp-pdf-0156",
@@ -6869,7 +6869,7 @@
       "correct": [
         "D"
       ],
-      "explanation": "Agility is the AWS Cloud's ability to let users provision resources in minutes (vs. weeks on-prem) — enabling rapid experimentation and faster delivery."
+      "explanation": "Agility is the AWS Cloud's ability to let users provision resources in minutes (vs. weeks on-prem) \u2014 enabling rapid experimentation and faster delivery."
     },
     {
       "id": "ccp-pdf-0163",
@@ -6927,7 +6927,7 @@
       "correct": [
         "A"
       ],
-      "explanation": "AWS Fargate is the serverless compute engine for containers — used with ECS and EKS, it eliminates the need to provision or manage EC2 hosts. FSx is file storage, ECS without Fargate runs on EC2, EC2 is exactly the thing we're avoiding."
+      "explanation": "AWS Fargate is the serverless compute engine for containers \u2014 used with ECS and EKS, it eliminates the need to provision or manage EC2 hosts. FSx is file storage, ECS without Fargate runs on EC2, EC2 is exactly the thing we're avoiding."
     },
     {
       "id": "ccp-pdf-0165",
@@ -6985,7 +6985,7 @@
       "correct": [
         "A"
       ],
-      "explanation": "\"Anticipate failure\" is a stated design principle of Operational Excellence. Make small, reversible changes; automate operations; refine procedures often — not the reverse."
+      "explanation": "\"Anticipate failure\" is a stated design principle of Operational Excellence. Make small, reversible changes; automate operations; refine procedures often \u2014 not the reverse."
     },
     {
       "id": "ccp-pdf-0167",
@@ -7322,7 +7322,7 @@
       "correct": [
         "B"
       ],
-      "explanation": "AWS Direct Connect provides a dedicated private network connection between on-prem and AWS — lower jitter, higher bandwidth than internet VPN."
+      "explanation": "AWS Direct Connect provides a dedicated private network connection between on-prem and AWS \u2014 lower jitter, higher bandwidth than internet VPN."
     },
     {
       "id": "ccp-pdf-0178",
@@ -7467,7 +7467,7 @@
       "correct": [
         "C"
       ],
-      "explanation": "Spot Instances offer the largest discounts (up to ~90%) for workloads that can tolerate interruption — perfect for a seldom-run data analysis job that can be stopped without damage."
+      "explanation": "Spot Instances offer the largest discounts (up to ~90%) for workloads that can tolerate interruption \u2014 perfect for a seldom-run data analysis job that can be stopped without damage."
     },
     {
       "id": "ccp-pdf-0183",
@@ -7682,7 +7682,7 @@
       "correct": [
         "B"
       ],
-      "explanation": "AWS Lambda is a serverless compute service — no servers to manage. EC2 is virtual machines, DynamoDB is a database, CodeCommit is Git."
+      "explanation": "AWS Lambda is a serverless compute service \u2014 no servers to manage. EC2 is virtual machines, DynamoDB is a database, CodeCommit is Git."
     },
     {
       "id": "ccp-pdf-0190",
@@ -7827,7 +7827,7 @@
       "correct": [
         "D"
       ],
-      "explanation": "Amazon Athena lets you run standard SQL queries directly against data stored in S3 — no infrastructure to manage. Glue is ETL, Data Pipeline is workflow, CloudSearch is search."
+      "explanation": "Amazon Athena lets you run standard SQL queries directly against data stored in S3 \u2014 no infrastructure to manage. Glue is ETL, Data Pipeline is workflow, CloudSearch is search."
     },
     {
       "id": "ccp-pdf-0195",
@@ -7856,7 +7856,7 @@
       "correct": [
         "D"
       ],
-      "explanation": "Agility — provisioning resources in minutes and easily changing them as requirements evolve — fits a startup that must launch fast and may need to pivot."
+      "explanation": "Agility \u2014 provisioning resources in minutes and easily changing them as requirements evolve \u2014 fits a startup that must launch fast and may need to pivot."
     },
     {
       "id": "ccp-pdf-0196",
@@ -7891,7 +7891,7 @@
         "B",
         "D"
       ],
-      "explanation": "On-demand compute and enhanced security are cloud advantages. AWS doesn't offer a blanket 100% SLA, code dev support isn't a defining cloud benefit, and cost/complexity decrease — not increase."
+      "explanation": "On-demand compute and enhanced security are cloud advantages. AWS doesn't offer a blanket 100% SLA, code dev support isn't a defining cloud benefit, and cost/complexity decrease \u2014 not increase."
     },
     {
       "id": "ccp-pdf-0197",
@@ -8216,7 +8216,7 @@
       "correct": [
         "D"
       ],
-      "explanation": "Least privilege grants only the permissions required to perform a given task — the minimum needed and no more."
+      "explanation": "Least privilege grants only the permissions required to perform a given task \u2014 the minimum needed and no more."
     },
     {
       "id": "ccp-pdf-0208",
@@ -8245,7 +8245,7 @@
       "correct": [
         "B"
       ],
-      "explanation": "Building an RDS Multi-AZ instance assumes a single AZ may fail and provides automatic failover to a standby — \"design for failure\" applied to the database tier."
+      "explanation": "Building an RDS Multi-AZ instance assumes a single AZ may fail and provides automatic failover to a standby \u2014 \"design for failure\" applied to the database tier."
     },
     {
       "id": "ccp-pdf-0209",
@@ -8339,7 +8339,7 @@
       "domain": "security-compliance",
       "topic": "iam",
       "type": "single",
-      "prompt": "Which of the following may be used to restrict certain users’ access to Amazon Simple Storage Service (Amazon S3) buckets?",
+      "prompt": "Which of the following may be used to restrict certain users\u2019 access to Amazon Simple Storage Service (Amazon S3) buckets?",
       "options": [
         {
           "id": "A",
@@ -8485,7 +8485,7 @@
       "topic": "shared-responsibility",
       "type": "multi",
       "selectCount": 2,
-      "prompt": "Which AWS shared responsibility model duties are the customer’s responsibility? (Select two.)",
+      "prompt": "Which AWS shared responsibility model duties are the customer\u2019s responsibility? (Select two.)",
       "options": [
         {
           "id": "A",
@@ -8497,7 +8497,7 @@
         },
         {
           "id": "C",
-          "text": "Configuration management of user’s applications"
+          "text": "Configuration management of user\u2019s applications"
         },
         {
           "id": "D",
@@ -8519,7 +8519,7 @@
       "domain": "billing-pricing-support",
       "topic": "cost-optimization",
       "type": "single",
-      "prompt": "Which AWS Cloud service gives tips on how to optimize an AWS account’s performance?",
+      "prompt": "Which AWS Cloud service gives tips on how to optimize an AWS account\u2019s performance?",
       "options": [
         {
           "id": "A",
@@ -8698,7 +8698,7 @@
       "correct": [
         "C"
       ],
-      "explanation": "Scalability — matching provisioned capacity to current demand — is the cloud advantage being described. Reliability is about uptime; global reach is geographic; HA is fault tolerance."
+      "explanation": "Scalability \u2014 matching provisioned capacity to current demand \u2014 is the cloud advantage being described. Reliability is about uptime; global reach is geographic; HA is fault tolerance."
     },
     {
       "id": "ccp-pdf-0224",
@@ -8751,7 +8751,7 @@
         },
         {
           "id": "D",
-          "text": "Connect the company’s on-premises data center to AWS using AWS Direct Connect"
+          "text": "Connect the company\u2019s on-premises data center to AWS using AWS Direct Connect"
         },
         {
           "id": "E",
@@ -8856,7 +8856,7 @@
       "domain": "cloud-concepts",
       "topic": "cloud-fundamentals",
       "type": "single",
-      "prompt": "A corporation wants to remove the necessity for pre-deployment estimation of infrastructure capacity. Additionally, the corporation wants to spend its money on cloud resources only when the resources are used. Which AWS Cloud feature best meets the business’s needs?",
+      "prompt": "A corporation wants to remove the necessity for pre-deployment estimation of infrastructure capacity. Additionally, the corporation wants to spend its money on cloud resources only when the resources are used. Which AWS Cloud feature best meets the business\u2019s needs?",
       "options": [
         {
           "id": "A",
@@ -8965,7 +8965,7 @@
       "correct": [
         "B"
       ],
-      "explanation": "Amazon Rekognition automatically detects objects, scenes, and faces in images and video — saving the time of doing it manually or with Mechanical Turk."
+      "explanation": "Amazon Rekognition automatically detects objects, scenes, and faces in images and video \u2014 saving the time of doing it manually or with Mechanical Turk."
     },
     {
       "id": "ccp-pdf-0233",
@@ -9030,7 +9030,7 @@
       "domain": "cloud-technology",
       "topic": "high-availability",
       "type": "single",
-      "prompt": "A business’s user base is worldwide in scope. The organization needs a highly available application with reduced latency for end users. Which AWS architecture approach will meet these criteria the MOST effectively?",
+      "prompt": "A business\u2019s user base is worldwide in scope. The organization needs a highly available application with reduced latency for end users. Which AWS architecture approach will meet these criteria the MOST effectively?",
       "options": [
         {
           "id": "A",
@@ -9059,7 +9059,7 @@
       "domain": "security-compliance",
       "topic": "shared-responsibility",
       "type": "single",
-      "prompt": "Which duty is the customer’s responsibility under the AWS shared responsibility model?",
+      "prompt": "Which duty is the customer\u2019s responsibility under the AWS shared responsibility model?",
       "options": [
         {
           "id": "A",
@@ -9139,7 +9139,7 @@
       "correct": [
         "B"
       ],
-      "explanation": "S3 + Lambda + DynamoDB is a classic decoupled, serverless, scalable pattern — each component scales independently. The other options describe single-instance or monolithic designs."
+      "explanation": "S3 + Lambda + DynamoDB is a classic decoupled, serverless, scalable pattern \u2014 each component scales independently. The other options describe single-instance or monolithic designs."
     },
     {
       "id": "ccp-pdf-0239",
@@ -9168,7 +9168,7 @@
       "correct": [
         "C"
       ],
-      "explanation": "Consolidated billing in AWS Organizations aggregates usage across member accounts so volume discounts apply across the whole org — no need to move resources or commit to RIs upfront."
+      "explanation": "Consolidated billing in AWS Organizations aggregates usage across member accounts so volume discounts apply across the whole org \u2014 no need to move resources or commit to RIs upfront."
     },
     {
       "id": "ccp-pdf-0240",
@@ -9226,7 +9226,7 @@
       "correct": [
         "B"
       ],
-      "explanation": "Everything from the virtualization layer down to physical facility security is solely AWS's responsibility — \"security of the cloud.\""
+      "explanation": "Everything from the virtualization layer down to physical facility security is solely AWS's responsibility \u2014 \"security of the cloud.\""
     },
     {
       "id": "ccp-pdf-0242",
@@ -9284,7 +9284,7 @@
       "correct": [
         "B"
       ],
-      "explanation": "AWS Systems Manager Session Manager provides browser-based shell access to EC2 without opening inbound SSH ports or managing SSH keys — far better posture than open SSH."
+      "explanation": "AWS Systems Manager Session Manager provides browser-based shell access to EC2 without opening inbound SSH ports or managing SSH keys \u2014 far better posture than open SSH."
     },
     {
       "id": "ccp-pdf-0244",
@@ -9667,7 +9667,7 @@
       "correct": [
         "C"
       ],
-      "explanation": "AWS Fargate is the serverless engine for containers — AWS manages cluster size, scheduling, and the environment, so the customer no longer manages Docker hosts themselves."
+      "explanation": "AWS Fargate is the serverless engine for containers \u2014 AWS manages cluster size, scheduling, and the environment, so the customer no longer manages Docker hosts themselves."
     },
     {
       "id": "ccp-pdf-0257",
@@ -9865,7 +9865,7 @@
         "A",
         "D"
       ],
-      "explanation": "Multi-AZ EC2 deployments prevent a single point of failure and increase availability. Cost typically rises slightly (more instances), cross-Region latency isn't addressed, and load is not increased — it's spread."
+      "explanation": "Multi-AZ EC2 deployments prevent a single point of failure and increase availability. Cost typically rises slightly (more instances), cross-Region latency isn't addressed, and load is not increased \u2014 it's spread."
     },
     {
       "id": "ccp-pdf-0263",
@@ -9987,7 +9987,7 @@
       "correct": [
         "B"
       ],
-      "explanation": "AWS Budgets supports RI/Savings-Plans utilization alerts — you can be notified when RI utilization drops below a target. Budgets alerts but doesn't prevent resource creation or split bills across payment methods."
+      "explanation": "AWS Budgets supports RI/Savings-Plans utilization alerts \u2014 you can be notified when RI utilization drops below a target. Budgets alerts but doesn't prevent resource creation or split bills across payment methods."
     },
     {
       "id": "ccp-pdf-0267",
@@ -10138,7 +10138,7 @@
       "correct": [
         "C"
       ],
-      "explanation": "Spot Instance pricing fluctuates with EC2 supply and demand — customers pay the current Spot price (subject to a cap). On-Demand and Reserved pricing are static."
+      "explanation": "Spot Instance pricing fluctuates with EC2 supply and demand \u2014 customers pay the current Spot price (subject to a cap). On-Demand and Reserved pricing are static."
     },
     {
       "id": "ccp-pdf-0272",
@@ -10387,7 +10387,7 @@
       "correct": [
         "D"
       ],
-      "explanation": "AWS replaces large upfront capital expenses with lower variable operating expenses — both lower variable and lower upfront."
+      "explanation": "AWS replaces large upfront capital expenses with lower variable operating expenses \u2014 both lower variable and lower upfront."
     },
     {
       "id": "ccp-pdf-0280",
@@ -10445,7 +10445,7 @@
       "correct": [
         "B"
       ],
-      "explanation": "Distributing across Availability Zones is the AWS feature that delivers high availability — survives any single AZ failure. Direct Connect is connectivity, data centers aren't customer-controlled, VPC is a network boundary."
+      "explanation": "Distributing across Availability Zones is the AWS feature that delivers high availability \u2014 survives any single AZ failure. Direct Connect is connectivity, data centers aren't customer-controlled, VPC is a network boundary."
     },
     {
       "id": "ccp-pdf-0282",
@@ -10509,7 +10509,7 @@
       "correct": [
         "A"
       ],
-      "explanation": "Attach an IAM policy to an IAM group and add the users — every group member inherits the permissions. Policies on individual users don't scale; Cognito user pools are app-level identity."
+      "explanation": "Attach an IAM policy to an IAM group and add the users \u2014 every group member inherits the permissions. Policies on individual users don't scale; Cognito user pools are app-level identity."
     },
     {
       "id": "ccp-pdf-0284",
@@ -10817,7 +10817,7 @@
       "correct": [
         "D"
       ],
-      "explanation": "Cost allocation tags applied to resources let you break out spend by application in Cost Explorer and the CUR — even when everything lives in a single AWS account."
+      "explanation": "Cost allocation tags applied to resources let you break out spend by application in Cost Explorer and the CUR \u2014 even when everything lives in a single AWS account."
     },
     {
       "id": "ccp-pdf-0294",
@@ -10997,7 +10997,7 @@
       "correct": [
         "B"
       ],
-      "explanation": "Moving to AWS replaces multi-month procurement cycles with on-demand access to IT resources — the agility advantage of the cloud."
+      "explanation": "Moving to AWS replaces multi-month procurement cycles with on-demand access to IT resources \u2014 the agility advantage of the cloud."
     },
     {
       "id": "ccp-pdf-0300",
@@ -11206,7 +11206,7 @@
       "correct": [
         "A"
       ],
-      "explanation": "\"Enable traceability\" — monitor, alert, and audit changes in real time — is a Security pillar design principle. AWS Config recording configuration history maps to this principle."
+      "explanation": "\"Enable traceability\" \u2014 monitor, alert, and audit changes in real time \u2014 is a Security pillar design principle. AWS Config recording configuration history maps to this principle."
     },
     {
       "id": "ccp-pdf-0307",
@@ -11264,7 +11264,7 @@
       "correct": [
         "C"
       ],
-      "explanation": "AWS's massive economies of scale — aggregated demand across many customers — drive the continuous reductions in cloud pricing."
+      "explanation": "AWS's massive economies of scale \u2014 aggregated demand across many customers \u2014 drive the continuous reductions in cloud pricing."
     },
     {
       "id": "ccp-pdf-0309",
@@ -11293,7 +11293,7 @@
       "correct": [
         "C"
       ],
-      "explanation": "Agility is the cloud's ability to reduce the time required to make IT resources available to developers — supporting faster innovation. The other options describe pay-as-you-go, capacity planning, and global reach."
+      "explanation": "Agility is the cloud's ability to reduce the time required to make IT resources available to developers \u2014 supporting faster innovation. The other options describe pay-as-you-go, capacity planning, and global reach."
     },
     {
       "id": "ccp-pdf-0310",
@@ -11444,7 +11444,7 @@
       "correct": [
         "B"
       ],
-      "explanation": "Amazon SQS message queues let producers and consumers run independently — the canonical decoupling primitive. Config is configuration tracking, Batch runs batch jobs, SES is email."
+      "explanation": "Amazon SQS message queues let producers and consumers run independently \u2014 the canonical decoupling primitive. Config is configuration tracking, Batch runs batch jobs, SES is email."
     },
     {
       "id": "ccp-pdf-0315",
@@ -11508,7 +11508,7 @@
       "correct": [
         "C"
       ],
-      "explanation": "Decoupling components — isolating them so one failure doesn't cascade — directly addresses the described tightly-coupled-failure problem. Elasticity and parallelism don't fix coupling; doubling resources can't survive coupled-component failure."
+      "explanation": "Decoupling components \u2014 isolating them so one failure doesn't cascade \u2014 directly addresses the described tightly-coupled-failure problem. Elasticity and parallelism don't fix coupling; doubling resources can't survive coupled-component failure."
     },
     {
       "id": "ccp-pdf-0317",
@@ -11566,7 +11566,7 @@
       "correct": [
         "A"
       ],
-      "explanation": "Create an IAM role with the required permissions and attach it to the EC2 instance via an instance profile — temporary, automatically rotated credentials, no embedded keys. Hard-coded user keys are an anti-pattern."
+      "explanation": "Create an IAM role with the required permissions and attach it to the EC2 instance via an instance profile \u2014 temporary, automatically rotated credentials, no embedded keys. Hard-coded user keys are an anti-pattern."
     },
     {
       "id": "ccp-pdf-0319",
@@ -11630,7 +11630,7 @@
       "correct": [
         "C"
       ],
-      "explanation": "Backup and restore is the least expensive of the AWS DR strategies — store backups only; restore on demand. Pilot light, Warm standby, and Multi-site cost progressively more."
+      "explanation": "Backup and restore is the least expensive of the AWS DR strategies \u2014 store backups only; restore on demand. Pilot light, Warm standby, and Multi-site cost progressively more."
     },
     {
       "id": "ccp-pdf-0321",
@@ -11659,7 +11659,7 @@
       "correct": [
         "B"
       ],
-      "explanation": "Amazon EC2 Instance Store is ephemeral — data is lost when the instance stops or terminates. EBS, EFS, and S3 all persist independently of instance lifecycle."
+      "explanation": "Amazon EC2 Instance Store is ephemeral \u2014 data is lost when the instance stops or terminates. EBS, EFS, and S3 all persist independently of instance lifecycle."
     },
     {
       "id": "ccp-pdf-0322",
@@ -12077,7 +12077,7 @@
       "correct": [
         "A"
       ],
-      "explanation": "Over 100 Mbps internet, 40 TB would take roughly a month to transfer. AWS Snowball ships physical devices and delivers in days — faster and cheaper for large bulk migrations."
+      "explanation": "Over 100 Mbps internet, 40 TB would take roughly a month to transfer. AWS Snowball ships physical devices and delivers in days \u2014 faster and cheaper for large bulk migrations."
     },
     {
       "id": "ccp-pdf-0336",
@@ -12315,7 +12315,7 @@
       "correct": [
         "B"
       ],
-      "explanation": "Amazon CloudWatch supports billing alarms — triggered when estimated charges exceed a threshold. Config, X-Ray, and CloudTrail don't generate billing-based warnings."
+      "explanation": "Amazon CloudWatch supports billing alarms \u2014 triggered when estimated charges exceed a threshold. Config, X-Ray, and CloudTrail don't generate billing-based warnings."
     },
     {
       "id": "ccp-pdf-0344",
@@ -12344,7 +12344,7 @@
       "correct": [
         "B"
       ],
-      "explanation": "AWS CloudTrail records who signed in to the Management Console and when — including the last-access timestamp. Cognito is app user identity; Inspector scans vulnerabilities; GuardDuty detects threats."
+      "explanation": "AWS CloudTrail records who signed in to the Management Console and when \u2014 including the last-access timestamp. Cognito is app user identity; Inspector scans vulnerabilities; GuardDuty detects threats."
     },
     {
       "id": "ccp-pdf-0345",
@@ -12402,7 +12402,7 @@
       "correct": [
         "B"
       ],
-      "explanation": "Amazon Aurora's storage is replicated six ways across three AZs by default — highly available out of the box. RDS Multi-AZ requires opt-in; EC2 and NAT instances are single by default."
+      "explanation": "Amazon Aurora's storage is replicated six ways across three AZs by default \u2014 highly available out of the box. RDS Multi-AZ requires opt-in; EC2 and NAT instances are single by default."
     },
     {
       "id": "ccp-pdf-0347",
@@ -12739,7 +12739,7 @@
       "correct": [
         "C"
       ],
-      "explanation": "60 TB in 10 days from on-prem to S3 calls for AWS Snowball — physical appliances ship in days. DMS migrates databases, Direct Connect is a network link (still slow at that volume), Glacier is archival storage."
+      "explanation": "60 TB in 10 days from on-prem to S3 calls for AWS Snowball \u2014 physical appliances ship in days. DMS migrates databases, Direct Connect is a network link (still slow at that volume), Glacier is archival storage."
     },
     {
       "id": "ccp-pdf-0358",
@@ -12861,7 +12861,7 @@
       "correct": [
         "C"
       ],
-      "explanation": "On-Demand Instances activate when needed, stay active as long as required, and bill per second — perfect when usage is intermittent but the instance must remain on for a procedure. Spot can be interrupted; RIs/Dedicated are commitment-based."
+      "explanation": "On-Demand Instances activate when needed, stay active as long as required, and bill per second \u2014 perfect when usage is intermittent but the instance must remain on for a procedure. Spot can be interrupted; RIs/Dedicated are commitment-based."
     },
     {
       "id": "ccp-pdf-0362",
@@ -13053,7 +13053,7 @@
       "correct": [
         "D"
       ],
-      "explanation": "Automatically recovering unhealthy applications via ASG + ALB is the Reliability pillar applied in practice — recovering from failure without manual intervention."
+      "explanation": "Automatically recovering unhealthy applications via ASG + ALB is the Reliability pillar applied in practice \u2014 recovering from failure without manual intervention."
     },
     {
       "id": "ccp-pdf-0368",
@@ -13291,7 +13291,7 @@
       "correct": [
         "B"
       ],
-      "explanation": "IAM Groups link multiple users to a shared set of permissions — attach a policy to the group and every member inherits it."
+      "explanation": "IAM Groups link multiple users to a shared set of permissions \u2014 attach a policy to the group and every member inherits it."
     },
     {
       "id": "ccp-pdf-0376",
@@ -13349,7 +13349,7 @@
       "correct": [
         "B"
       ],
-      "explanation": "Amazon SQS provides message queues that decouple producers from consumers — applications can scale and fail independently."
+      "explanation": "Amazon SQS provides message queues that decouple producers from consumers \u2014 applications can scale and fail independently."
     },
     {
       "id": "ccp-pdf-0378",
@@ -13436,7 +13436,7 @@
       "correct": [
         "B"
       ],
-      "explanation": "Amazon WorkSpaces virtual Windows desktops are customer-managed at the OS level — the customer is responsible for keeping the desktop OS updated and patched. FSx, Directory Service, and RDS are managed by AWS at the OS level."
+      "explanation": "Amazon WorkSpaces virtual Windows desktops are customer-managed at the OS level \u2014 the customer is responsible for keeping the desktop OS updated and patched. FSx, Directory Service, and RDS are managed by AWS at the OS level."
     },
     {
       "id": "ccp-pdf-0381",
@@ -13465,7 +13465,7 @@
       "correct": [
         "D"
       ],
-      "explanation": "AWS CloudTrail records the API call that terminated the EC2 instance — including the caller, time, and source IP — so you can investigate the unavailability. CloudWatch Logs may have related logs but doesn't directly identify the API action."
+      "explanation": "AWS CloudTrail records the API call that terminated the EC2 instance \u2014 including the caller, time, and source IP \u2014 so you can investigate the unavailability. CloudWatch Logs may have related logs but doesn't directly identify the API action."
     },
     {
       "id": "ccp-pdf-0382",
@@ -13610,7 +13610,7 @@
       "correct": [
         "A"
       ],
-      "explanation": "AWS CloudFormation models and provisions AWS resources from declarative templates — that's its core purpose. It doesn't update application code, set up data lakes, or produce billing reports."
+      "explanation": "AWS CloudFormation models and provisions AWS resources from declarative templates \u2014 that's its core purpose. It doesn't update application code, set up data lakes, or produce billing reports."
     },
     {
       "id": "ccp-pdf-0387",
@@ -13697,7 +13697,7 @@
       "correct": [
         "D"
       ],
-      "explanation": "The AWS Cost and Usage Report provides the most granular spend data — by product, tag, account, hour/day/month. RI and SP utilization reports cover purchasing, Budgets reports show threshold tracking."
+      "explanation": "The AWS Cost and Usage Report provides the most granular spend data \u2014 by product, tag, account, hour/day/month. RI and SP utilization reports cover purchasing, Budgets reports show threshold tracking."
     },
     {
       "id": "ccp-pdf-0390",
@@ -13918,7 +13918,7 @@
       "correct": [
         "B"
       ],
-      "explanation": "AWS IAM is an \"always free\" service — there is no charge for IAM itself. S3, ELB, and WAF all have usage-based charges."
+      "explanation": "AWS IAM is an \"always free\" service \u2014 there is no charge for IAM itself. S3, ELB, and WAF all have usage-based charges."
     },
     {
       "id": "ccp-pdf-0397",
