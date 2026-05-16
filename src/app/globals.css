@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg: #f0ece0;
+    --surface: #ffffff;
+    --border: #e5e0d6;
+    --bubble: #e5e0d6;
+    --fg: #1a1a18;
+    --muted: #5b5950;
+    --accent: #c96442;
+    --accent-fg: #ffffff;
+    --success: #5b8a5a;
+    --success-fg: #ffffff;
+    --danger: #a8533d;
+    --danger-fg: #ffffff;
+    --warning: #b3791f;
+
+    --radius: 1rem;
+
+    color-scheme: light;
+  }
+
+  .dark {
+    --bg: #2b2a27;
+    --surface: #1f1e1b;
+    --border: #3d3a35;
+    --bubble: #393937;
+    --fg: #eeeeee;
+    --muted: #a3a098;
+    --accent: #c96442;
+    --accent-fg: #ffffff;
+    --success: #7fb07e;
+    --success-fg: #131613;
+    --danger: #d68a72;
+    --danger-fg: #2b1a14;
+    --warning: #d4a85a;
+
+    color-scheme: dark;
+  }
+
+  html,
+  body {
+    background-color: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-serif), ui-serif, Georgia, "Times New Roman", serif;
+    font-feature-settings: "ss01", "ss02";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--accent) 30%, transparent);
+    color: var(--fg);
+  }
+
+  *:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@theme {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-border: var(--border);
+  --color-bubble: var(--bubble);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-fg: var(--accent-fg);
+  --color-success: var(--success);
+  --color-success-fg: var(--success-fg);
+  --color-danger: var(--danger);
+  --color-danger-fg: var(--danger-fg);
+  --color-warning: var(--warning);
+
+  --radius-2xl: 1rem;
+  --radius-xl: 0.75rem;
+  --radius-lg: 0.5rem;
+}
+
+@layer utilities {
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+
+  .font-serif {
+    font-family: var(--font-serif), ui-serif, Georgia, "Times New Roman", serif;
+  }
+
+  .font-sans {
+    font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  }
+
+  .prose-reading {
+    line-height: 1.65rem;
+  }
+}

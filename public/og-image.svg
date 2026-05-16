@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#F0ECE0"/>
+  <g transform="translate(140, 230)">
+    <text x="0" y="120" font-family="Georgia, 'Times New Roman', serif" font-weight="500" font-size="180" fill="#1a1a18" letter-spacing="-4">ISH</text>
+    <circle cx="450" cy="108" r="22" fill="#c96442"/>
+  </g>
+  <text x="140" y="450" font-family="Georgia, 'Times New Roman', serif" font-size="38" fill="#5b5950" font-style="italic">AWS Cloud Practitioner — focused practice.</text>
+  <rect x="140" y="540" width="60" height="3" fill="#c96442"/>
+  <text x="216" y="552" font-family="Inter, system-ui, sans-serif" font-size="22" fill="#5b5950" letter-spacing="2">ISH-AWS · OPEN SOURCE · MIT</text>
+</svg>
