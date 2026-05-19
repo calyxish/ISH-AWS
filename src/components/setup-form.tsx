@@ -33,6 +33,7 @@ const ORDER_OPTIONS: { value: OrderMode; label: string; description: string }[] 
   { value: "random", label: "Random", description: "Shuffle the whole pool. Different every session." },
   { value: "first", label: "First N", description: "Take questions from the start of the bank." },
   { value: "last", label: "Last N", description: "Take questions from the end of the bank." },
+  { value: "range", label: "Range start–end", description: "Pick an explicit slice of the bank by position. Bypasses the domain filter." },
 ];
 
 const DISPLAY_OPTIONS: { value: DisplayMode; label: string; description: string }[] = [
@@ -82,7 +83,20 @@ export function SetupForm() {
     [hydrated, settings.domains, bankSize],
   );
   const effectiveMax = Math.max(MIN_COUNT, available);
-  const cappedCount = Math.min(Math.max(settings.count, MIN_COUNT), effectiveMax);
+
+  const isRange = settings.order === "range";
+  const rangeStart = Math.max(
+    1,
+    Math.min(bankSize, settings.rangeStart ?? 1),
+  );
+  const rangeEnd = Math.max(
+    rangeStart,
+    Math.min(bankSize, settings.rangeEnd ?? bankSize),
+  );
+  const rangeCount = rangeEnd - rangeStart + 1;
+  const cappedCount = isRange
+    ? rangeCount
+    : Math.min(Math.max(settings.count, MIN_COUNT), effectiveMax);
 
   function update<K extends keyof Settings>(key: K, value: Settings[K]) {
     setSettings((s) => ({ ...s, [key]: value }));
@@ -100,7 +114,9 @@ export function SetupForm() {
     e.preventDefault();
     if (submitting) return;
     setSubmitting(true);
-    const finalSettings: Settings = { ...settings, count: cappedCount };
+    const finalSettings: Settings = isRange
+      ? { ...settings, count: rangeCount, rangeStart, rangeEnd }
+      : { ...settings, count: cappedCount };
     saveSettings(finalSettings);
     clearSession();
     router.push("/practice");
@@ -120,14 +136,16 @@ export function SetupForm() {
         <div className="flex flex-col gap-6">
           <Field
             label="Number of questions"
-            trailing={`${cappedCount} of ${available} available`}
+            trailing={`${cappedCount} of ${isRange ? bankSize : available} available`}
             hint={
-              cappedCount === effectiveMax && effectiveMax < settings.count
-                ? `Only ${effectiveMax} match your domain filter — count was clamped.`
-                : `Slide to adjust, or type any value between ${MIN_COUNT} and ${effectiveMax}.`
+              isRange
+                ? "Range mode below sets this automatically — change From / To to adjust."
+                : cappedCount === effectiveMax && effectiveMax < settings.count
+                  ? `Only ${effectiveMax} match your domain filter — count was clamped.`
+                  : `Slide to adjust, or type any value between ${MIN_COUNT} and ${effectiveMax}.`
             }
           >
-            <div className="flex items-center gap-3">
+            <div className={`flex items-center gap-3 ${isRange ? "opacity-50" : ""}`}>
               <Slider
                 min={MIN_COUNT}
                 max={effectiveMax}
@@ -135,6 +153,7 @@ export function SetupForm() {
                 onValueChange={(n) => update("count", n)}
                 aria-label="Number of questions"
                 className="flex-1"
+                disabled={isRange}
               />
               <input
                 type="number"
@@ -148,7 +167,8 @@ export function SetupForm() {
                   const clamped = Math.max(MIN_COUNT, Math.min(effectiveMax, Math.round(raw)));
                   update("count", clamped);
                 }}
-                className="h-10 w-24 rounded-lg border border-[var(--border)] bg-[var(--surface)] px-3 font-sans text-sm tabular-nums text-[var(--fg)] focus:border-[var(--accent)] focus:outline-none"
+                disabled={isRange}
+                className="h-10 w-24 rounded-lg border border-[var(--border)] bg-[var(--surface)] px-3 font-sans text-sm tabular-nums text-[var(--fg)] focus:border-[var(--accent)] focus:outline-none disabled:cursor-not-allowed"
                 aria-label="Number of questions (exact)"
               />
             </div>
@@ -229,6 +249,62 @@ export function SetupForm() {
             </OptionRow>
           ))}
         </div>
+
+        {isRange ? (
+          <div className="mt-4 flex flex-col gap-2 rounded-xl border border-[var(--border)] bg-[var(--bubble)] p-4">
+            <div className="flex flex-wrap items-end gap-3">
+              <label className="flex flex-col gap-1 font-sans text-xs uppercase tracking-[0.14em] text-[var(--muted)]">
+                From
+                <input
+                  type="number"
+                  min={1}
+                  max={bankSize}
+                  step={1}
+                  value={rangeStart}
+                  onChange={(e) => {
+                    const raw = Number(e.target.value);
+                    if (!Number.isFinite(raw)) return;
+                    update(
+                      "rangeStart",
+                      Math.max(1, Math.min(bankSize, Math.round(raw))),
+                    );
+                  }}
+                  className="h-10 w-28 rounded-lg border border-[var(--border)] bg-[var(--surface)] px-3 font-sans text-sm tabular-nums text-[var(--fg)] focus:border-[var(--accent)] focus:outline-none"
+                  aria-label="Range start"
+                />
+              </label>
+              <label className="flex flex-col gap-1 font-sans text-xs uppercase tracking-[0.14em] text-[var(--muted)]">
+                To
+                <input
+                  type="number"
+                  min={1}
+                  max={bankSize}
+                  step={1}
+                  value={rangeEnd}
+                  onChange={(e) => {
+                    const raw = Number(e.target.value);
+                    if (!Number.isFinite(raw)) return;
+                    update(
+                      "rangeEnd",
+                      Math.max(1, Math.min(bankSize, Math.round(raw))),
+                    );
+                  }}
+                  className="h-10 w-28 rounded-lg border border-[var(--border)] bg-[var(--surface)] px-3 font-sans text-sm tabular-nums text-[var(--fg)] focus:border-[var(--accent)] focus:outline-none"
+                  aria-label="Range end"
+                />
+              </label>
+              <p className="font-sans text-sm text-[var(--muted)]">
+                {rangeCount} question{rangeCount === 1 ? "" : "s"} selected · bank
+                has {bankSize}.
+              </p>
+            </div>
+            {rangeEnd < rangeStart ? (
+              <p className="font-sans text-xs text-[var(--danger)]">
+                The end must be at or after the start.
+              </p>
+            ) : null}
+          </div>
+        ) : null}
       </Card>
 
       <Card>
@@ -256,11 +332,13 @@ export function SetupForm() {
         </div>
       </Card>
 
-      <Card>
+      <Card className={isRange ? "opacity-50" : undefined}>
         <CardHeader>
           <CardTitle>Focus on specific domains?</CardTitle>
           <CardDescription>
-            Leave all unchecked to draw from every domain.
+            {isRange
+              ? "Disabled while Range ordering is active — the start/end positions already define the selection."
+              : "Leave all unchecked to draw from every domain."}
           </CardDescription>
         </CardHeader>
 
@@ -273,6 +351,7 @@ export function SetupForm() {
               type="checkbox"
               selected={settings.domains.includes(d)}
               onChange={() => toggleDomain(d)}
+              disabled={isRange}
             >
               {DOMAIN_LABELS[d]}
             </OptionRow>

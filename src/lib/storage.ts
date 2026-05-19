@@ -8,7 +8,7 @@ import {
 const SETTINGS_KEY = "ish-aws:settings";
 const SESSION_KEY = "ish-aws:session";
 
-const VALID_ORDERS: OrderMode[] = ["random", "first", "last"];
+const VALID_ORDERS: OrderMode[] = ["random", "first", "last", "range"];
 
 function isBrowser(): boolean {
   return typeof window !== "undefined" && typeof window.localStorage !== "undefined";

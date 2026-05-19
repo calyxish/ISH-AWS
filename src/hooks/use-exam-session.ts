@@ -24,11 +24,7 @@ interface UseExamSessionResult {
 }
 
 function createSession(settings: Settings): SessionState {
-  const questions = buildSessionQuestions(
-    settings.domains,
-    settings.order,
-    settings.count,
-  );
+  const questions = buildSessionQuestions(settings);
   const startedAt = Date.now();
   return {
     startedAt,
