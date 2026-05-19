@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button";
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Field } from "@/components/ui/field";
 import { OptionRow } from "@/components/ui/option-row";
-import { Select } from "@/components/ui/select";
 import { Slider } from "@/components/ui/slider";
 import { loadQuestions } from "@/lib/questions";
 import { clearSession, loadSettings, saveSettings } from "@/lib/storage";
@@ -21,9 +20,15 @@ import {
   type Settings,
 } from "@/lib/types";
 
-const TIME_PRESETS = [10, 20, 30, 45, 60, 90] as const;
 const MIN_COUNT = 5;
 const MAX_COUNT = 65;
+const MIN_MINUTES = 1;
+const MAX_MINUTES = 10 * 60 + 59; // 10h 59m
+
+function clampMinutes(n: number): number {
+  if (!Number.isFinite(n)) return MIN_MINUTES;
+  return Math.max(MIN_MINUTES, Math.min(MAX_MINUTES, Math.round(n)));
+}
 
 const ORDER_OPTIONS: { value: OrderMode; label: string; description: string }[] = [
   { value: "random", label: "Random", description: "Shuffle the whole pool. Different every session." },
@@ -45,9 +50,10 @@ const DISPLAY_OPTIONS: { value: DisplayMode; label: string; description: string 
 ];
 
 function suggestedMinutes(count: number): number {
-  const ideal = Math.round(count * 1.4);
-  const preset = TIME_PRESETS.find((m) => m >= ideal) ?? TIME_PRESETS[TIME_PRESETS.length - 1];
-  return preset;
+  // ~1.4 minutes per question (matches the real CCP cadence: 90 min / 65 q).
+  // Round up to the next multiple of 5 so the suggestion looks tidy.
+  const ideal = Math.ceil((count * 1.4) / 5) * 5;
+  return clampMinutes(ideal);
 }
 
 function countAvailable(domains: Domain[]): number {
@@ -129,21 +135,44 @@ export function SetupForm() {
 
           <Field
             label="Time limit"
-            hint="When the clock hits zero, the session auto-submits."
+            trailing={`${settings.timeMinutes} min total`}
+            hint="Enter any length. When the clock hits zero, the session auto-submits."
           >
-            <div className="flex items-center gap-3">
-              <Select
-                value={String(settings.timeMinutes)}
-                onChange={(e) => update("timeMinutes", Number(e.target.value))}
-                aria-label="Time limit"
-                className="max-w-40"
-              >
-                {TIME_PRESETS.map((m) => (
-                  <option key={m} value={m}>
-                    {m} minutes
-                  </option>
-                ))}
-              </Select>
+            <div className="flex flex-wrap items-center gap-3">
+              <label className="inline-flex items-center gap-2 font-sans text-sm text-[var(--muted)]">
+                <input
+                  type="number"
+                  min={0}
+                  max={10}
+                  step={1}
+                  value={Math.floor(settings.timeMinutes / 60)}
+                  onChange={(e) => {
+                    const hours = Math.max(0, Math.min(10, Number(e.target.value) || 0));
+                    const mins = settings.timeMinutes % 60;
+                    update("timeMinutes", clampMinutes(hours * 60 + mins));
+                  }}
+                  className="h-10 w-20 rounded-lg border border-[var(--border)] bg-[var(--surface)] px-3 font-sans text-sm tabular-nums text-[var(--fg)] focus:border-[var(--accent)] focus:outline-none"
+                  aria-label="Hours"
+                />
+                <span>h</span>
+              </label>
+              <label className="inline-flex items-center gap-2 font-sans text-sm text-[var(--muted)]">
+                <input
+                  type="number"
+                  min={0}
+                  max={59}
+                  step={1}
+                  value={settings.timeMinutes % 60}
+                  onChange={(e) => {
+                    const mins = Math.max(0, Math.min(59, Number(e.target.value) || 0));
+                    const hours = Math.floor(settings.timeMinutes / 60);
+                    update("timeMinutes", clampMinutes(hours * 60 + mins));
+                  }}
+                  className="h-10 w-20 rounded-lg border border-[var(--border)] bg-[var(--surface)] px-3 font-sans text-sm tabular-nums text-[var(--fg)] focus:border-[var(--accent)] focus:outline-none"
+                  aria-label="Minutes"
+                />
+                <span>m</span>
+              </label>
               <button
                 type="button"
                 onClick={() => update("timeMinutes", suggestedMinutes(cappedCount))}
