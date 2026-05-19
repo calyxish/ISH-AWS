@@ -145,7 +145,7 @@ export interface Question {
   reference?: string;
 }
 
-export type OrderMode = "random" | "first" | "last" | "middle";
+export type OrderMode = "random" | "first" | "last" | "range";
 export type DisplayMode = "one-by-one" | "all-at-once";
 
 export interface Settings {
@@ -154,6 +154,10 @@ export interface Settings {
   order: OrderMode;
   display: DisplayMode;
   domains: Domain[];
+  /** Inclusive 1-based start index into the bank. Only used when order === "range". */
+  rangeStart?: number;
+  /** Inclusive 1-based end index into the bank. Only used when order === "range". */
+  rangeEnd?: number;
 }
 
 export interface SessionState {
