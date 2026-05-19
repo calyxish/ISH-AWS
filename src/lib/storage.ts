@@ -1,7 +1,14 @@
-import { DEFAULT_SETTINGS, type SessionState, type Settings } from "@/lib/types";
+import {
+  DEFAULT_SETTINGS,
+  type OrderMode,
+  type SessionState,
+  type Settings,
+} from "@/lib/types";
 
 const SETTINGS_KEY = "ish-aws:settings";
 const SESSION_KEY = "ish-aws:session";
+
+const VALID_ORDERS: OrderMode[] = ["random", "first", "last"];
 
 function isBrowser(): boolean {
   return typeof window !== "undefined" && typeof window.localStorage !== "undefined";
@@ -13,7 +20,12 @@ export function loadSettings(): Settings {
     const raw = window.localStorage.getItem(SETTINGS_KEY);
     if (!raw) return DEFAULT_SETTINGS;
     const parsed = JSON.parse(raw) as Partial<Settings>;
-    return { ...DEFAULT_SETTINGS, ...parsed };
+    const merged: Settings = { ...DEFAULT_SETTINGS, ...parsed };
+    // Migrate any stale OrderMode (e.g. the retired "middle") back to the default.
+    if (!VALID_ORDERS.includes(merged.order)) {
+      merged.order = DEFAULT_SETTINGS.order;
+    }
+    return merged;
   } catch {
     return DEFAULT_SETTINGS;
   }

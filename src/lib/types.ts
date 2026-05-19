@@ -145,7 +145,7 @@ export interface Question {
   reference?: string;
 }
 
-export type OrderMode = "random" | "first" | "last" | "middle";
+export type OrderMode = "random" | "first" | "last";
 export type DisplayMode = "one-by-one" | "all-at-once";
 
 export interface Settings {

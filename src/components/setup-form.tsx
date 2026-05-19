@@ -29,7 +29,6 @@ const ORDER_OPTIONS: { value: OrderMode; label: string; description: string }[] 
   { value: "random", label: "Random", description: "Shuffle the whole pool. Different every session." },
   { value: "first", label: "First N", description: "Take questions from the start of the bank." },
   { value: "last", label: "Last N", description: "Take questions from the end of the bank." },
-  { value: "middle", label: "Middle N", description: "Take questions centered in the bank." },
 ];
 
 const DISPLAY_OPTIONS: { value: DisplayMode; label: string; description: string }[] = [

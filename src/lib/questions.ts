@@ -31,10 +31,6 @@ export function selectByMode(
       return pool.slice(0, k);
     case "last":
       return pool.slice(pool.length - k);
-    case "middle": {
-      const start = Math.floor((pool.length - k) / 2);
-      return pool.slice(start, start + k);
-    }
     case "random":
     default: {
       const a = pool.slice();
