@@ -21,7 +21,6 @@ import {
 } from "@/lib/types";
 
 const MIN_COUNT = 5;
-const MAX_COUNT = 65;
 const MIN_MINUTES = 1;
 const MAX_MINUTES = 10 * 60 + 59; // 10h 59m
 
@@ -74,12 +73,16 @@ export function SetupForm() {
     setHydrated(true);
   }, []);
 
-  const available = useMemo(
-    () => (hydrated ? countAvailable(settings.domains) : MAX_COUNT),
-    [hydrated, settings.domains],
+  const bankSize = useMemo(
+    () => (hydrated ? loadQuestions().length : MIN_COUNT),
+    [hydrated],
   );
-  const effectiveMax = Math.max(MIN_COUNT, Math.min(MAX_COUNT, available));
-  const cappedCount = Math.min(settings.count, effectiveMax);
+  const available = useMemo(
+    () => (hydrated ? countAvailable(settings.domains) : bankSize),
+    [hydrated, settings.domains, bankSize],
+  );
+  const effectiveMax = Math.max(MIN_COUNT, available);
+  const cappedCount = Math.min(Math.max(settings.count, MIN_COUNT), effectiveMax);
 
   function update<K extends keyof Settings>(key: K, value: Settings[K]) {
     setSettings((s) => ({ ...s, [key]: value }));
@@ -121,16 +124,34 @@ export function SetupForm() {
             hint={
               cappedCount === effectiveMax && effectiveMax < settings.count
                 ? `Only ${effectiveMax} match your domain filter — count was clamped.`
-                : undefined
+                : `Slide to adjust, or type any value between ${MIN_COUNT} and ${effectiveMax}.`
             }
           >
-            <Slider
-              min={MIN_COUNT}
-              max={effectiveMax}
-              value={cappedCount}
-              onValueChange={(n) => update("count", n)}
-              aria-label="Number of questions"
-            />
+            <div className="flex items-center gap-3">
+              <Slider
+                min={MIN_COUNT}
+                max={effectiveMax}
+                value={cappedCount}
+                onValueChange={(n) => update("count", n)}
+                aria-label="Number of questions"
+                className="flex-1"
+              />
+              <input
+                type="number"
+                min={MIN_COUNT}
+                max={effectiveMax}
+                step={1}
+                value={cappedCount}
+                onChange={(e) => {
+                  const raw = Number(e.target.value);
+                  if (!Number.isFinite(raw)) return;
+                  const clamped = Math.max(MIN_COUNT, Math.min(effectiveMax, Math.round(raw)));
+                  update("count", clamped);
+                }}
+                className="h-10 w-24 rounded-lg border border-[var(--border)] bg-[var(--surface)] px-3 font-sans text-sm tabular-nums text-[var(--fg)] focus:border-[var(--accent)] focus:outline-none"
+                aria-label="Number of questions (exact)"
+              />
+            </div>
           </Field>
 
           <Field
